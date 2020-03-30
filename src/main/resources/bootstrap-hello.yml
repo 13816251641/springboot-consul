@@ -1,0 +1,29 @@
+#consul中对应:config/springboot-consul,hello/person即可,所以环境名可以随便取
+server:
+  port: 8431
+name: lujieni
+spring:
+  application:
+    name: springboot-consul #微服务名称
+  cloud:
+    consul:
+      host: 192.168.254.130 #consul服务器地址
+      port: 8500
+      config:
+        prefix: config #基础文件夹,默认值config
+        enabled: true  #启用consul配置中心
+        format: YAML   #配置转码方式，默认 key-value，其他可选：yaml/files/properties
+        data-key: person
+        watch:
+          enabled: false #禁用配置自动刷新
+        profile-separator: ','  #环境分隔符，默认值 ","
+      discovery:
+        register: true         #是否注册到consul中
+        hostname: 10.39.4.95   #服务端ip地址
+        serviceName: ${spring.application.name}
+        # 指定consul调用actuator提供的健康检查的路径
+        health-check-path: /health
+        # 健康检查的频率
+        health-check-interval: 10s
+        #微服务下的实例名称,一个微服务可以有多个实例提供负载均衡
+        instanceId: springboot-consul-01
