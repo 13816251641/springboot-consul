@@ -10,10 +10,19 @@ import org.springframework.context.annotation.Configuration;
 public class MyConfig {
     private String age;
 
+    private String name;
+
     @Value("${age}")
-    private void setName(String age){
+    private void setAge(String age){
         System.out.println(age);
         this.age = age;
     }
+
+    @Value("${name}")
+    private void setName(String name){
+        System.out.println(name);
+        this.name = name;
+    }
+
 
 }

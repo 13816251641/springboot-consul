@@ -1,6 +1,11 @@
+#consul中对应:config/  springboot-consul,dev/   person
+#环境名可以随便取,像我这里就叫dev,对应的就是bootstrap-dev.yml,这里的person对应的是data-key的值
+#config/  application,dev/  person  这个是父级,当在config/  springboot-consul,dev/   person 中没有找到的话
+#会去config/  application,dev/  person 父级里面找,父级的优先级比子级低!!!
 server:
   port: 8431
-name: lujieni
+name: default #优先级比consul上配置的参数要低
+age: default #优先级比consul上配置的参数要低
 spring:
   application:
     name: springboot-consul #微服务名称
@@ -12,7 +17,7 @@ spring:
         prefix: config #基础文件夹,默认值config
         enabled: true  #启用consul配置中心
         format: YAML   #配置转码方式，默认 key-value，其他可选：yaml/files/properties
-        data-key: user
+        data-key: person
         watch:
           enabled: false #禁用配置自动刷新
         profile-separator: ','  #环境分隔符，默认值 ","
