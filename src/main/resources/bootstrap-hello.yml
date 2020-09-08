@@ -1,8 +1,6 @@
-#consul中对应:config/  springboot-consul,hello/   person
-#环境名可以随便取,像我这里就叫hello,对应的就是bootstrap-hello.yml,这里的person对应的是data-key的值
 server:
   port: 8431
-#age: lujieni  #consul上配置的优先级大于bootstrap的配置
+#age: lujieni  #优先级比consul上配置的参数要低
 spring:
   application:
     name: springboot-consul #微服务名称
