@@ -5,6 +5,8 @@ spring:
   application:
     name: springboot-consul #微服务名称
   cloud:
+    config:
+      enabled: false
     consul:
       host: 192.168.254.130 #consul服务器地址
       port: 8500
