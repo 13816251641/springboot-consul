@@ -1,7 +1,8 @@
 #consul中对应:config/  springboot-consul,dev/   person
 #环境名可以随便取,像我这里就叫dev,对应的就是bootstrap-dev.yml,这里的person对应的是data-key的值
-#config/  application,dev/  person  这个是父级,当在config/  springboot-consul,dev/  person中没有找到的话
-#会去config/  application,dev/  person 父级里面找,父级的优先级比子级低!!!
+#config/ application,dev/ person  也会加载这个配置文件,当在config/ springboot-consul,dev/ person中没有找到的话
+#会去config/  application,dev/  person 里面找,config/ application,dev/ person优先级比config/ springboot-consul,dev/ person
+#要低!!!
 server:
   port: 8431
 name: default #优先级比consul上配置的参数要低
