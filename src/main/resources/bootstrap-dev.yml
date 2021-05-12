@@ -5,8 +5,8 @@
 #要低!!!
 server:
   port: 8431
-name: default #优先级比consul上配置的参数要低
-age: default  #优先级比consul上配置的参数要低
+name: default #优先级比consul上配置的参数要低  springboot-consul,dev/person > application,dev/person > 本地配置
+age: default  #优先级比consul上配置的参数要低  springboot-consul,dev/person > application,dev/person > 本地配置
 spring:
   application:
     name: springboot-consul #微服务名称

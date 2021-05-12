@@ -13,15 +13,15 @@ public class MyConfig {
     private String name;
 
     @Value("${age}")
-    private void setAge(String age){
-        System.out.println(age);
-        this.age = age;
+    private void setAge(String data){
+        System.out.println(data);
+        this.age = data;
     }
 
     @Value("${name}")
-    private void setName(String name){
-        System.out.println(name);
-        this.name = name;
+    private void setName(String data){
+        System.out.println(data);
+        this.name = data;
     }
 
 
